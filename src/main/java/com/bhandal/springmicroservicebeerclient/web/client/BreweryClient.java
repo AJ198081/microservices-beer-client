@@ -39,4 +39,8 @@ public class BreweryClient {
         this.apiHost = apiHost;
     }
 
+    public void deleteBeer(UUID uuid) {
+        restTemplate.delete(apiHost + BEER_PATH_V1 + uuid);
+    }
+
 }

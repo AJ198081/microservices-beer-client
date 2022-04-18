@@ -29,7 +29,6 @@ class BreweryClientTest {
                 .build();
         final URI uri = breweryClient.saveNewBeer(beerDto);
         assertNotNull(uri);
-        System.out.println(uri);
     }
 
     @Test
@@ -38,5 +37,10 @@ class BreweryClientTest {
                 .beerName("Corona")
                 .build();
         breweryClient.updateBeer(UUID.randomUUID(), beerDto);
+    }
+
+    @Test
+    void deleteBeer() {
+        breweryClient.deleteBeer(UUID.randomUUID());
     }
 }
